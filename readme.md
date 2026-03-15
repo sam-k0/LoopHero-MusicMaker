@@ -3,13 +3,12 @@
 This allows you to go to the music maker room.
 
 ## Install
-check [this guide](https://github.com/sam-k0/LoopHero_Mods) on how to install mods.
+Check [this guide](https://github.com/sam-k0/LoopHero_Mods) on how to install mods.
 
-## Controls
+## Usage
 
-Press F1 in the main menu to go to music maker.
-Press F1 in the music maker to go to main menu.
+In the title screen is now a button "Music Maker" that loads the music maker.
 
-## Notes
-- Press ESC in the Music Maker to access settings
-- You can access the Music Maker from anywhere, but unsaved progress will be lost
+Inside the music maker, there is a button to Exit & Restart the game.
+
+You can **only** access the music maker from the title screen, to prevent losing save-data.

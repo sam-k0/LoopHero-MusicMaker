@@ -104,14 +104,26 @@
     <ClInclude Include="SDK\Structures\Undocumented\YYVAR\YYVAR.hpp">
       <Filter>Header Files\SDK</Filter>
     </ClInclude>
-    <ClInclude Include="MyHelper.h">
+    <ClInclude Include="MyPlugin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LoopHeroEnums.h">
+    <ClInclude Include="LHRooms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dllmain.h">
+    <ClInclude Include="LHCore.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LHSprites.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LHObjects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Filesystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.md" />
   </ItemGroup>
 </Project>
