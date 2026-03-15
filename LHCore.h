@@ -41,9 +41,9 @@ namespace LHCore {
 
     DWORD WINAPI ResolveCore(LPVOID lpParam)
     {
-        Misc::Print("Unpacking struct");
+        //Misc::Print("Unpacking struct");
         CoreReadyPack* pack = (CoreReadyPack*)(lpParam);
-        Misc::Print("Importing Core function");
+        //Misc::Print("Importing Core function");
         void* rawCoreReady;
         void* rawRegisterModule;
         void* rawUnregisterModule;
@@ -58,13 +58,13 @@ namespace LHCore {
                 pCoreReady = reinterpret_cast<CoreReady>(rawCoreReady);
                 if (pCoreReady() == true)
                 {
-                    Misc::Print("Core is present", CLR_GREEN);
+                    //Misc::Print("Core is present", CLR_GREEN);
                     // Loading register function
                     if (PmGetExported("RegisterModule", rawRegisterModule) == YYTK_OK)
                     {
                         pRegisterModule = reinterpret_cast<RegisterModule>(rawRegisterModule);
                         pRegisterModule(gPluginName, pack->myplugin);
-                        Misc::Print("Registered to Core", CLR_GREEN);
+                        //Misc::Print("Registered to Core", CLR_GREEN);
                     }
                     else
                     {
@@ -105,7 +105,7 @@ namespace LHCore {
                     if (pInstallPrePatch != nullptr)
                     {
                         // Call the callback in which all the imported funcs are called
-                        Misc::Print("According to exports, core is ready", CLR_GREEN);
+                        //Misc::Print("According to exports, core is ready", CLR_GREEN);
                         pack->mycallback();
                     }
                     else {
