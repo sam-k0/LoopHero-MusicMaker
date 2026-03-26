@@ -207,7 +207,7 @@ int CodePostPatch(YYTKCodeEvent* codeEvent, void*)
         if (!buttonCreated && gCurrentRoom == LHRooms::rm_intro) // doesnt exist, spawn button
         {
             buttonCreated = true;
-            buttonRef = Binds::CallBuiltinA("instance_create_depth", { 480., 320., -200., (double)LHObjectEnum::o_continue_button });
+            buttonRef = Binds::CallBuiltinA("instance_create_depth", { 530., 315., -200., (double)LHObjectEnum::o_continue_button });
             
             ResetMusicButtonText();
             Binds::CallBuiltinA("variable_instance_set", { buttonRef, "click_event", -1. });
