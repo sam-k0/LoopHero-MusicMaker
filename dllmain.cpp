@@ -197,7 +197,6 @@ int CodePostPatch(YYTKCodeEvent* codeEvent, void*)
             else if (gCurrentRoom == LHRooms::rm_music_maker)
             {
                 buttonCreated = false;
-                //Binds::CallBuiltinA("room_goto", { static_cast<double>(LHRooms::rm_load) });
                 Binds::CallBuiltinA("game_restart", {});
             }
         }
@@ -216,11 +215,8 @@ int CodePostPatch(YYTKCodeEvent* codeEvent, void*)
 
         break;
 
-    case HEVT_CONTINUE_BUTTON_STEP:
-        if(selfInst->i_spriteindex == buttonRef.As<double>())
-        {
-            ResetMusicButtonText();
-        }
+    case HEVT_ROOM_RM_MUSIC_MAKER:
+        ResetMusicButtonText();
         break;
 
     case HEVT_ROOM_RM_CAMP:
@@ -228,19 +224,11 @@ int CodePostPatch(YYTKCodeEvent* codeEvent, void*)
 
         if (CustomButtonExists())
         {
-            //Binds::CallBuiltinA("variable_instance_set", { buttonRef, "disabled", 1.0});
             Binds::CallBuiltinA("instance_destroy", { buttonRef });
         }
         break;
 
     }
-    /*if (Misc::StringHasSubstr(codeObj->i_pName, "Mouse_10"))
-    {
-        Misc::Print(codeObj->i_pName);
-        Printvars(selfInst->i_spriteindex);
-    }*/
-
-
     
     return YYTK_OK;  
 }
@@ -262,7 +250,7 @@ DllExport YYTKStatus PluginEntry(
 {
     LHCore::CoreReadyPack* pack = new LHCore::CoreReadyPack(PluginObject, InstallPatches);
     PluginObject->PluginUnload = PluginUnload;
-    CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)LHCore::ResolveCore, (LPVOID)pack, 0, NULL); // Wait for LHCC
+    CloseHandle(CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)LHCore::ResolveCore, (LPVOID)pack, 0, NULL)); // Wait for LHCC
     return YYTK_OK; // Successful PluginEntry.
 }
 
