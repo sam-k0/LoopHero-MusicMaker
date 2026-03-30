@@ -188,7 +188,7 @@ int CodePostPatch(YYTKCodeEvent* codeEvent, void*)
     switch (evt)
     {
     case HEVT_BUTTON_PRESS: 
-        if (selfInst->i_spriteindex == buttonRef.As<double>()) // Pressed music maker button
+        if (selfInst->i_id == buttonRef.As<double>()) // Pressed music maker button
         {
             if (gCurrentRoom == LHRooms::rm_intro)
             {
