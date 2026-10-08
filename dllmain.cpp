@@ -63,7 +63,7 @@ void Printvars(double inst)
 
         YYRValue type;
         CallBuiltin(type, "typeof", nullptr, nullptr, { value });
-        std::string typestr = std::string(static_cast<const char*>(type));
+        std::string typestr = type.operator std::string();
 
         
         Misc::Print(type);
