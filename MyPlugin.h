@@ -16,7 +16,7 @@
 
 
 HINSTANCE DllHandle; // Self modhandle
-std::string gPluginName = "sam-k0.MusicMaker.yytk";
+std::string gPluginName = "sam-k0.loophero.musicmaker";
 
 DllExport std::string GetPluginName() // For yytk
 {
